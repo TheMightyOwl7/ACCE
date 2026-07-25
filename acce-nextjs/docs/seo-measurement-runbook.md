@@ -6,6 +6,8 @@
 
 ## One-time: submit new URLs for indexing (on release)
 
+**Release status:** Deployed to production on **2026-07-25** (SEO epics 1 to 5 merged to `main`, Coolify deploy). Sitemap `https://accetutors.co.za/sitemap.xml` submitted to GSC on **2026-07-25** (Domain property, full URL required; 34 URLs, 0 PDF entries). Per-URL Request Indexing for the 10 canonical URLs below: in progress from 2026-07-25 (tick each box as submitted).
+
 ### How to submit
 
 For each URL below, open Google Search Console, go to **URL Inspection**, paste the URL, and click **Request Indexing**. Do this once per URL, ideally on the day of release or shortly after.
@@ -120,6 +122,7 @@ Check it every month in the snapshot log. If position rises above 3 (worse), inv
 | Date | cta tutors pos | accounting tutor pos | financial management tutor pos | Top Pages count | Notes |
 |------|----------------|----------------------|-------------------------------|-----------------|-------|
 | 2026-07-11 | 3 | 34 | 27 | 2 | Baseline (pre-release positions). Architecture sprint complete. New pages not yet indexed. |
-| _(OWNER: paste current live GSC pull here)_ | | | | | First live snapshot after release. Fill from ClaudeSEO GSC snapshot for `accetutors.co.za`. |
+| 2026-07-25 | | | | | Release day. Pages live, PDFs held, sitemap submitted to GSC, 10 URLs sent for indexing. Positions not yet available (pages just submitted, allow 1 to 14 days to index). Owner to fill from the first ClaudeSEO GSC snapshot once positions appear. |
+| _(OWNER: paste first post-release live GSC pull here)_ | | | | | First live snapshot with positions. Fill from ClaudeSEO GSC snapshot for `accetutors.co.za`. |
 
 **Reading the table:** Lower position numbers are better (position 1 = top of Google). A blank cell means the page has not yet earned a position for that query in this snapshot period.
