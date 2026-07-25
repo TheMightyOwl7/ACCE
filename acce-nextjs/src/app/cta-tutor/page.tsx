@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SessionFormats from "@/components/SessionFormats";
 import ConversionCtas from "@/components/ConversionCtas";
-import { BookOpen, Users, Award, HelpCircle, CheckCircle } from "lucide-react";
+import { BookOpen, Users, Award, HelpCircle, CheckCircle, Check, ChevronDown } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "CTA Tutor: Certificate in Theory of Accounting | ACCE",
@@ -113,17 +113,22 @@ export default function CtaTutorPage() {
                                 What CTA is and why it is hard
                             </h2>
                         </div>
-                        <div className="space-y-4 text-muted-foreground leading-relaxed">
-                            <p>
-                                The Certificate in Theory of Accounting (CTA) is the postgraduate diploma year that sits between your undergraduate accounting degree and the SAICA Initial Test of Competence (ITC). In South Africa, it is the gateway to the CA(SA) designation, and it is not easy to pass.
-                            </p>
-                            <p>
-                                Most students underestimate it because it looks like a continuation of third year. It is not. The CTA tests you across all four subjects at the same time, and the ITC at the end of the year asks you to apply them together in a single integrated case study. You cannot compartmentalise. If your Tax knowledge is strong but your MAF is shaky, the ITC will find that gap.
-                            </p>
-                            <p>
-                                The pass rate for the ITC hovers around 50% for first-time writers most years. That is not a number to dismiss. The students who struggle are not weak students. They are students who never had their specific blind spots addressed before exam day. That is exactly what structured tutoring targets.
-                            </p>
-                        </div>
+                        <p className="text-muted-foreground leading-relaxed mb-6">
+                            The Certificate in Theory of Accounting (CTA) is the postgraduate diploma year that sits between your undergraduate accounting degree and the SAICA Initial Test of Competence (ITC): the gateway to the CA(SA) designation. Most students underestimate it because it looks like a continuation of third year. It is not.
+                        </p>
+                        <ul className="space-y-2">
+                            {[
+                                "The CTA tests you across all four subjects at the same time, and the ITC at the end of the year asks you to apply them together in a single integrated case study",
+                                "You cannot compartmentalise: if your Tax knowledge is strong but your MAF is shaky, the ITC will find that gap",
+                                "The pass rate for the ITC hovers around 50% for first-time writers most years",
+                                "The students who struggle are not weak students: they are students who never had their specific blind spots addressed before exam day. That is exactly what structured tutoring targets",
+                            ].map((topic) => (
+                                <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                    <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                    <span>{topic}</span>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
 
                     {/* Section 2: The four subjects */}
@@ -182,16 +187,35 @@ export default function CtaTutorPage() {
                                 ITC and board exam preparation
                             </h2>
                         </div>
-                        <div className="space-y-4 text-muted-foreground leading-relaxed">
-                            <p>
-                                The SAICA ITC is a two-part exam. Paper 1 focuses on Financial Accounting and Tax. Paper 2 covers MAF, Auditing, and integration. Both papers require you to demonstrate competence, not just recall of knowledge.
-                            </p>
-                            <p>
-                                My ITC preparation sessions do a few things specifically. We go through past papers under timed conditions, because many students know the content but have never practised allocating time across a multi-part scenario. We identify the subjects and question types where you are consistently dropping marks. And we work on integration: how to approach a case study that layers Tax implications into an Accounting scenario and asks for an Auditing recommendation.
-                            </p>
-                            <p>
-                                For students writing the APC after passing the ITC, the same principles apply at greater depth. The APC tests ethical reasoning and professional judgement in a comprehensive case. Students who have built strong integration habits during CTA tend to handle the APC better.
-                            </p>
+                        <p className="text-muted-foreground leading-relaxed mb-6">
+                            The SAICA ITC is a two-part exam: Paper 1 focuses on Financial Accounting and Tax, and Paper 2 covers MAF, Auditing, and integration. Both papers require you to demonstrate competence, not just recall of knowledge, and my preparation sessions are built around that.
+                        </p>
+                        <div className="grid md:grid-cols-2 gap-4">
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    ITC Preparation Sessions
+                                </h3>
+                                <ul className="space-y-2">
+                                    {[
+                                        "Past papers under timed conditions: many students know the content but have never practised allocating time across a multi-part scenario",
+                                        "Identifying the subjects and question types where you are consistently dropping marks",
+                                        "Integration practice: approaching a case study that layers Tax implications into an Accounting scenario and asks for an Auditing recommendation",
+                                    ].map((topic) => (
+                                        <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    After the ITC: the APC
+                                </h3>
+                                <p className="text-muted-foreground text-sm">
+                                    For students writing the APC after passing the ITC, the same principles apply at greater depth. The APC tests ethical reasoning and professional judgement in a comprehensive case. Students who have built strong integration habits during CTA tend to handle the APC better.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
@@ -206,14 +230,9 @@ export default function CtaTutorPage() {
                                 Results and student feedback
                             </h2>
                         </div>
-                        <div className="space-y-4 text-muted-foreground leading-relaxed mb-6">
-                            <p>
-                                I am Priyanka, and I have been tutoring accounting students at undergraduate and postgraduate level for several years. Having qualified as a CA(SA) through SAICA, I understand the CTA and ITC from the inside, not just as a teacher.
-                            </p>
-                            <p>
-                                The students I work with consistently say the same things: the sessions helped them understand the structure of exam answers, not just the technical content; and working through integration questions in a guided setting was different from doing past papers alone.
-                            </p>
-                        </div>
+                        <p className="text-muted-foreground leading-relaxed mb-6">
+                            I am Priyanka, a CA(SA) who qualified through SAICA, so I understand the CTA and the ITC from the inside, not just as a teacher. I have been tutoring accounting students at undergraduate and postgraduate level for several years, and the feedback is consistent: sessions helped students understand the structure of exam answers, not just the technical content, and working through integration questions in a guided setting was different from doing past papers alone.
+                        </p>
                         <div className="grid md:grid-cols-2 gap-4">
                             <div className="bg-card rounded-xl border border-border p-6">
                                 <p className="text-muted-foreground text-sm leading-relaxed mb-3">
@@ -240,17 +259,23 @@ export default function CtaTutorPage() {
                         </div>
                         <div className="space-y-4">
                             {FAQ_ITEMS.map((item, index) => (
-                                <div
+                                <details
                                     key={index}
-                                    className="bg-card rounded-xl border border-border p-6"
+                                    className="group bg-card rounded-xl border border-border"
                                 >
-                                    <h3 className="font-display text-base font-semibold text-foreground mb-2">
-                                        {item.question}
-                                    </h3>
-                                    <p className="text-muted-foreground text-sm leading-relaxed">
+                                    <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                                        <h3 className="font-display text-base font-semibold text-foreground">
+                                            {item.question}
+                                        </h3>
+                                        <ChevronDown
+                                            className="w-5 h-5 text-accent flex-shrink-0 transition-transform duration-200 group-open:rotate-180"
+                                            aria-hidden="true"
+                                        />
+                                    </summary>
+                                    <p className="text-muted-foreground text-sm leading-relaxed px-6 pb-6">
                                         {item.answer}
                                     </p>
-                                </div>
+                                </details>
                             ))}
                         </div>
                     </div>

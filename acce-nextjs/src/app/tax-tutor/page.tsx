@@ -7,7 +7,7 @@ import SubjectGuides from "@/components/SubjectGuides";
 import SessionFormats from "@/components/SessionFormats";
 import ConversionCtas from "@/components/ConversionCtas";
 import { getGuidesForSubject } from "@/config/guides";
-import { BookOpen, Users, Award, HelpCircle, TrendingUp } from "lucide-react";
+import { BookOpen, Users, Award, HelpCircle, TrendingUp, Check, ChevronDown } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Tax Tutor: Taxation for PGDA & CTA | ACCE Tutors",
@@ -119,22 +119,67 @@ export default function TaxTutorPage() {
                                 What we cover: Income Tax Act, corporate tax, VAT, estate duty and CGT
                             </h2>
                         </div>
-                        <div className="space-y-4 text-muted-foreground leading-relaxed">
-                            <p>
-                                Taxation on the CA(SA) pathway is taught primarily through the Income Tax Act No. 58 of 1962 and the VAT Act, Act 89 of 1991. The core of the income tax syllabus is the general deduction formula under section 11(a): gross income, special inclusions, exempt income, and the deductions framework. Students need to work through this sequence consistently, because ITC questions reward a visible formula analysis even when the final answer is wrong.
-                            </p>
-                            <p>
-                                Individual taxation builds on the gross income definition by adding employment-specific rules: fringe benefits (the use of motor vehicle, meals and refreshments, low-interest loans, residential accommodation), retirement fund contribution deductions, medical tax credits and qualifying medical expenses, and the interaction between employment income and provisional tax obligations. These items appear in almost every ITC individual tax scenario, and the exam traps are specific: getting the travel allowance business-use apportionment wrong, applying the wrong medical credit formula, or misclassifying a retirement annuity versus a pension fund contribution.
-                            </p>
-                            <p>
-                                Corporate tax covers the taxable income of companies (gross income, allowable deductions, capital allowances under sections 11(e) and 12C/12E), dividends tax under section 64E and the withholding mechanism, assessed losses and the carry-forward rules, and close corporation provisions at undergraduate level. At CTA level, company tax integrates with transfer pricing, the secondary adjustments rule, and thin capitalisation concepts.
-                            </p>
-                            <p>
-                                VAT under the VAT Act distinguishes output tax (charged on taxable supplies), input tax (claimable on costs relating to taxable supplies), zero-rated supplies, and exempt supplies. The registration threshold, the tax period, and the implications of mixed (taxable and exempt) supplies on input tax apportionment are the areas where marks cluster in ITC questions.
-                            </p>
-                            <p>
-                                Capital Gains Tax under the Eighth Schedule applies the disposal, proceeds, base cost, exclusion, and inclusion-rate sequence. For individuals the annual exclusion and primary residence exclusion are the main adjustments; for companies the 80% inclusion rate applies. Estate duty under the Estate Duty Act levies duty on the dutiable amount of the estate after applying the section 4A abatement (R3.5 million) and deductions for bequests to a surviving spouse, donations tax exemptions, and the value of assets passing to PBOs.
-                            </p>
+                        <p className="text-muted-foreground leading-relaxed mb-6">
+                            Taxation on the CA(SA) pathway is taught from the Income Tax Act No. 58 of 1962 and the VAT Act, Act 89 of 1991, and ITC questions reward a visible formula analysis even when the final answer is wrong. These are the areas sessions cover.
+                        </p>
+                        <div className="grid md:grid-cols-3 gap-4">
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    Income Tax &amp; Individuals
+                                </h3>
+                                <ul className="space-y-2">
+                                    {[
+                                        "General deduction formula (section 11(a))",
+                                        "Gross income, special inclusions and exempt income",
+                                        "Fringe benefits: motor vehicle, low-interest loans, residential accommodation",
+                                        "Retirement fund deductions and medical tax credits",
+                                        "Provisional tax (Fourth Schedule)",
+                                    ].map((topic) => (
+                                        <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    Corporate Tax
+                                </h3>
+                                <ul className="space-y-2">
+                                    {[
+                                        "Company taxable income and capital allowances (sections 11(e), 12C, 12E)",
+                                        "Dividends tax (section 64E) and the withholding mechanism",
+                                        "Assessed losses and carry-forward rules",
+                                        "Close corporation provisions",
+                                        "Transfer pricing and thin capitalisation at CTA level",
+                                    ].map((topic) => (
+                                        <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    VAT, CGT &amp; Estate Duty
+                                </h3>
+                                <ul className="space-y-2">
+                                    {[
+                                        "Output vs input tax, zero-rated vs exempt supplies",
+                                        "Mixed-supply input tax apportionment",
+                                        "CGT under the Eighth Schedule: disposal, proceeds, base cost, inclusion rate",
+                                        "Annual and primary residence exclusions",
+                                        "Estate duty and the section 4A abatement",
+                                    ].map((topic) => (
+                                        <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -172,9 +217,6 @@ export default function TaxTutorPage() {
                                 </p>
                             </div>
                         </div>
-                        <p className="text-muted-foreground leading-relaxed">
-                            Whether you are building tax foundations at undergraduate level, consolidating the full taxation syllabus in your PGDA year, or preparing for the ITC and APC, sessions are structured around your level and your exam target.
-                        </p>
                     </div>
 
                     {/* Section 3: How sessions work (shared, compact) */}
@@ -188,17 +230,9 @@ export default function TaxTutorPage() {
                                 Why ACCE: the CA(SA) pathway, taxation from the Acts, real exam results
                             </h2>
                         </div>
-                        <div className="space-y-4 text-muted-foreground leading-relaxed mb-6">
-                            <p>
-                                I am Priyanka, a CA(SA) qualified through SAICA. I have worked through the same taxation syllabus, sat the ITC (where Taxation appears alongside Financial Accounting, MAF, and Auditing), and navigated the APC (where tax consequences thread through the integrated business case). That firsthand experience shapes how I tutor: I can tell you not just what section 11(a) says, but where the ITC marker is looking for the formula structure and what separates a distinction answer from an average one.
-                            </p>
-                            <p>
-                                One thing I emphasise in taxation tutoring is working from the Acts. Students who learn tax as a series of rules to memorise struggle with unfamiliar fact patterns in the ITC. Students who understand why the Income Tax Act draws the line between capital and revenue in the way it does, or why the VAT Act treats zero-rated and exempt supplies differently, can reason through questions they have not seen before. That is the standard the ITC and APC require, and it is what I build towards.
-                            </p>
-                            <p>
-                                For APC candidates specifically, the tax angle is often the part of the integrated case they feel least prepared for, because the APC does not ask for a memorised formula: it asks you to identify which tax considerations are relevant to a business decision and advise accordingly. I prepare APC candidates for that applied, advisory register, not just technical recall.
-                            </p>
-                        </div>
+                        <p className="text-muted-foreground leading-relaxed mb-6">
+                            I am Priyanka, a CA(SA) qualified through SAICA who has sat both the ITC and the APC. I tutor tax from the Acts, because students who understand why the Income Tax Act draws the capital/revenue line, or why the VAT Act treats zero-rated and exempt supplies differently, can reason through unfamiliar fact patterns instead of relying on memorised rules. That is also what the APC demands: identifying which tax considerations are relevant to a business decision and advising on them, not reciting a formula. Knowing where the ITC marker looks for structure is what separates a distinction answer from an average one.
+                        </p>
                         <div className="grid md:grid-cols-2 gap-4">
                             <div className="bg-card rounded-xl border border-border p-6">
                                 <p className="text-muted-foreground text-sm leading-relaxed mb-3">
@@ -257,17 +291,23 @@ export default function TaxTutorPage() {
                         </div>
                         <div className="space-y-4">
                             {FAQ_ITEMS.map((item, index) => (
-                                <div
+                                <details
                                     key={index}
-                                    className="bg-card rounded-xl border border-border p-6"
+                                    className="group bg-card rounded-xl border border-border"
                                 >
-                                    <h3 className="font-display text-base font-semibold text-foreground mb-2">
-                                        {item.question}
-                                    </h3>
-                                    <p className="text-muted-foreground text-sm leading-relaxed">
+                                    <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                                        <h3 className="font-display text-base font-semibold text-foreground">
+                                            {item.question}
+                                        </h3>
+                                        <ChevronDown
+                                            className="w-5 h-5 text-accent flex-shrink-0 transition-transform duration-200 group-open:rotate-180"
+                                            aria-hidden="true"
+                                        />
+                                    </summary>
+                                    <p className="text-muted-foreground text-sm leading-relaxed px-6 pb-6">
                                         {item.answer}
                                     </p>
-                                </div>
+                                </details>
                             ))}
                         </div>
                     </div>

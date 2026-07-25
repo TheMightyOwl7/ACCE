@@ -7,7 +7,7 @@ import SubjectGuides from "@/components/SubjectGuides";
 import SessionFormats from "@/components/SessionFormats";
 import ConversionCtas from "@/components/ConversionCtas";
 import { getGuidesForSubject } from "@/config/guides";
-import { BookOpen, Users, Award, HelpCircle, TrendingUp } from "lucide-react";
+import { BookOpen, Users, Award, HelpCircle, TrendingUp, Check, ChevronDown } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Financial Management & Management Accounting Tutor | ACCE",
@@ -119,16 +119,68 @@ export default function FinancialManagementTutorPage() {
                                 What MAF covers: costing, budgeting, decision-making and financial management
                             </h2>
                         </div>
-                        <div className="space-y-4 text-muted-foreground leading-relaxed">
-                            <p>
-                                MAF (Management Accounting and Finance) is one subject on the PGDA and CTA curriculum, but at undergraduate level it is often taught as two separate modules: management accounting (cost accounting and budgeting) and financial management (corporate finance and capital allocation). Both strands converge into one integrated MAF subject at CTA level, which is why students who studied "management accounting" at university and those who studied "financial management" end up in the same place.
-                            </p>
-                            <p>
-                                The costing and management accounting strand covers: absorption costing and marginal (variable) costing, including the profit reconciliation between the two methods; activity-based costing, where we move beyond blanket overhead rates and assign costs using activity drivers; standard costing and variance analysis across materials, labour, and fixed overheads; process costing and job costing; and the decision-making toolkit, which includes relevant costing, cost-volume-profit and break-even analysis, make-or-buy decisions, limiting-factor analysis, and pricing under full-cost versus marginal-cost approaches.
-                            </p>
-                            <p>
-                                The financial management strand covers: time value of money and discounted cash flow; net present value, internal rate of return, payback, and accounting rate of return as capital budgeting tools; cost of capital and WACC, including the weighted average across equity and debt; capital structure and leverage; working capital management (the cash conversion cycle, debtor and inventory management, short-term financing); business valuation techniques; and an introduction to financial risk and instruments. At CTA level, NPV and IRR questions are common, and the APC tests these in case-study decision scenarios where you advise on capital investment choices under uncertainty.
-                            </p>
+                        <p className="text-muted-foreground leading-relaxed mb-6">
+                            MAF (Management Accounting and Finance) is one subject on the PGDA and CTA curriculum, but at undergraduate level it is often taught as two separate modules: management accounting (cost accounting and budgeting) and financial management (corporate finance and capital allocation). Sessions cover both strands, from costing foundations to the NPV and IRR questions common at CTA level and the case-study capital investment decisions the APC tests.
+                        </p>
+                        <div className="grid md:grid-cols-3 gap-4">
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    Costing &amp; Management Accounting
+                                </h3>
+                                <ul className="space-y-2">
+                                    {[
+                                        "Absorption and marginal (variable) costing, including the profit reconciliation",
+                                        "Activity-based costing with activity drivers",
+                                        "Standard costing and variance analysis: materials, labour, fixed overheads",
+                                        "Process costing and job costing",
+                                        "Budgeting",
+                                    ].map((topic) => (
+                                        <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    Decision-Making Toolkit
+                                </h3>
+                                <ul className="space-y-2">
+                                    {[
+                                        "Relevant costing",
+                                        "Cost-volume-profit (CVP) and break-even analysis",
+                                        "Make-or-buy decisions",
+                                        "Limiting-factor analysis",
+                                        "Pricing under full-cost versus marginal-cost approaches",
+                                    ].map((topic) => (
+                                        <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    Financial Management
+                                </h3>
+                                <ul className="space-y-2">
+                                    {[
+                                        "Time value of money and discounted cash flow",
+                                        "NPV, IRR, payback and accounting rate of return",
+                                        "Cost of capital and WACC across equity and debt",
+                                        "Capital structure and leverage",
+                                        "Working capital: cash conversion cycle, debtor and inventory management, short-term financing",
+                                        "Business valuation, financial risk and instruments",
+                                    ].map((topic) => (
+                                        <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -166,9 +218,6 @@ export default function FinancialManagementTutorPage() {
                                 </p>
                             </div>
                         </div>
-                        <p className="text-muted-foreground leading-relaxed">
-                            Whether you are an undergraduate building cost-accounting foundations, a PGDA student consolidating the full MAF syllabus, a CTA candidate preparing for the ITC, or an APC candidate applying MAF thinking to a case study, sessions adapt to your level and your exam target.
-                        </p>
                     </div>
 
                     {/* Section 3: How sessions work (shared, compact) */}
@@ -182,17 +231,9 @@ export default function FinancialManagementTutorPage() {
                                 Why ACCE: CA(SA) pathway, MAF from both sides, real exam results
                             </h2>
                         </div>
-                        <div className="space-y-4 text-muted-foreground leading-relaxed mb-6">
-                            <p>
-                                I am Priyanka, a CA(SA) qualified through SAICA. I have worked through the same MAF curriculum, sat the ITC (where MAF appears alongside the other core subjects), and navigated the APC (where MAF thinking underpins half the decision-making scenarios in the case study). That experience shapes how I tutor: I can tell you not just how the costing method works, but where exam questions hide the traps and what a mark-earning answer looks like versus a technically correct but poorly structured one.
-                            </p>
-                            <p>
-                                One thing that separates MAF tutoring at ACCE from generic tutoring is the APC angle. Most tutoring for management accounting focuses on the ITC: standard costing schedules, variance analysis, NPV computations. But for APC candidates, the relevant question is how management accounting and financial management thinking applies in an integrated business context: which capital investment to recommend, whether to make or buy a component, how to assess a pricing decision given contribution margin and capacity constraints. I prepare students for both, and the approach is different for each.
-                            </p>
-                            <p>
-                                The students I work with consistently report that the sessions helped them understand not just the mechanics but the logic behind the method: why marginal costing gives a different profit figure than absorption, why a positive NPV does not automatically mean the project should proceed, what the limiting factor really means for a production decision. Understanding that logic is what makes the difference between recognising a question type and actually answering it well.
-                            </p>
-                        </div>
+                        <p className="text-muted-foreground leading-relaxed mb-6">
+                            I am Priyanka, a CA(SA) qualified through SAICA. I have worked through the same MAF curriculum, sat the ITC, and navigated the APC, where MAF thinking underpins half the decision-making scenarios in the case study. Sessions cover both angles: the technical side the ITC tests (standard costing schedules, variance analysis, NPV computations) and the applied APC angle (which capital investment to recommend, whether to make or buy, how to assess a pricing decision given contribution margin and capacity constraints). Throughout, the focus is the logic behind the method, not just the mechanics, because that is what turns recognising a question into answering it well.
+                        </p>
                         <div className="grid md:grid-cols-2 gap-4">
                             <div className="bg-card rounded-xl border border-border p-6">
                                 <p className="text-muted-foreground text-sm leading-relaxed mb-3">
@@ -251,17 +292,23 @@ export default function FinancialManagementTutorPage() {
                         </div>
                         <div className="space-y-4">
                             {FAQ_ITEMS.map((item, index) => (
-                                <div
+                                <details
                                     key={index}
-                                    className="bg-card rounded-xl border border-border p-6"
+                                    className="group bg-card rounded-xl border border-border"
                                 >
-                                    <h3 className="font-display text-base font-semibold text-foreground mb-2">
-                                        {item.question}
-                                    </h3>
-                                    <p className="text-muted-foreground text-sm leading-relaxed">
+                                    <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                                        <h3 className="font-display text-base font-semibold text-foreground">
+                                            {item.question}
+                                        </h3>
+                                        <ChevronDown
+                                            className="w-5 h-5 text-accent flex-shrink-0 transition-transform duration-200 group-open:rotate-180"
+                                            aria-hidden="true"
+                                        />
+                                    </summary>
+                                    <p className="text-muted-foreground text-sm leading-relaxed px-6 pb-6">
                                         {item.answer}
                                     </p>
-                                </div>
+                                </details>
                             ))}
                         </div>
                     </div>

@@ -19,7 +19,7 @@ const SubjectGuides = ({ subject, subjectLabel }: SubjectGuidesProps) => {
     const guides = getGuidesForSubject(subject);
 
     return (
-        <div id="guides" className="max-w-3xl scroll-mt-24">
+        <div id="guides" className="max-w-4xl mx-auto scroll-mt-24">
             <div className="flex items-center gap-3 mb-4">
                 <BookOpen className="w-6 h-6 text-accent" aria-hidden="true" />
                 <h2 className="font-display text-2xl font-semibold text-foreground">

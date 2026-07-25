@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SessionFormats from "@/components/SessionFormats";
 import ConversionCtas from "@/components/ConversionCtas";
-import { BookOpen, Users, Award, HelpCircle, CheckCircle } from "lucide-react";
+import { BookOpen, Users, Award, HelpCircle, CheckCircle, Check, ChevronDown } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "PGDA Tutor: Postgraduate Diploma in Accounting | ACCE",
@@ -117,16 +117,60 @@ export default function PgdaTutorPage() {
                                 What PGDA is
                             </h2>
                         </div>
-                        <div className="space-y-4 text-muted-foreground leading-relaxed">
-                            <p>
-                                The Postgraduate Diploma in Accounting is a formal postgraduate qualification, not simply an exam or a short course. It is offered by accredited South African universities including UNISA, UCT, Wits, UP, UJ, and Stellenbosch, and it sits at honours level on the National Qualifications Framework. SAICA recognises it as the theoretical foundation of the CA(SA) qualifying pathway, and it is formally equivalent to the Certificate in Theory of Accounting (CTA) that you will see named on SAICA&rsquo;s website. The two terms refer to the same qualification.
-                            </p>
-                            <p>
-                                To enrol in the PGDA you generally need an accredited undergraduate accounting degree. SAICA publishes a list of accredited degrees and institutions. If your undergraduate degree is not on that list, some universities offer a bridging or conversion programme that meets the entry standard. UNISA is the most common choice for working professionals and students who need a distance-learning option, though contact universities like UCT and Wits remain popular for students who prefer structured lecture programmes.
-                            </p>
-                            <p>
-                                The diploma year covers four core subjects simultaneously: Financial Accounting, Taxation, Management Accounting and Finance (MAF), and Auditing. Each subject is taught at honours level, and the year-end assessments are designed to test depth, not just recall. Many students who performed well in their undergraduate degree find the jump to PGDA level substantial, particularly when combined with managing four high-demand subjects at the same time.
-                            </p>
+                        <p className="text-muted-foreground leading-relaxed mb-6">
+                            The Postgraduate Diploma in Accounting is a formal postgraduate qualification at honours level on the National Qualifications Framework, not simply an exam or a short course. SAICA recognises it as the theoretical foundation of the CA(SA) qualifying pathway, and it is formally equivalent to the Certificate in Theory of Accounting (CTA) named on SAICA&rsquo;s website: the two terms refer to the same qualification.
+                        </p>
+                        <div className="grid md:grid-cols-3 gap-4">
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    Where It Is Offered
+                                </h3>
+                                <ul className="space-y-2">
+                                    {[
+                                        "Accredited South African universities: UNISA, UCT, Wits, UP, UJ, and Stellenbosch",
+                                        "UNISA is the most common choice for working professionals needing a distance-learning option",
+                                        "Contact universities like UCT and Wits suit students who prefer structured lecture programmes",
+                                    ].map((topic) => (
+                                        <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    Entry Requirements
+                                </h3>
+                                <ul className="space-y-2">
+                                    {[
+                                        "An accredited undergraduate accounting degree (SAICA publishes the list of accredited degrees and institutions)",
+                                        "If your degree is not on the list, some universities offer a bridging or conversion programme that meets the entry standard",
+                                    ].map((topic) => (
+                                        <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    What the Year Involves
+                                </h3>
+                                <ul className="space-y-2">
+                                    {[
+                                        "Four core subjects taught simultaneously: Financial Accounting, Taxation, Management Accounting and Finance (MAF), and Auditing",
+                                        "Year-end assessments designed to test depth, not just recall",
+                                        "A substantial jump from undergraduate level, even for strong students",
+                                    ].map((topic) => (
+                                        <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -177,24 +221,68 @@ export default function PgdaTutorPage() {
                                 The PGDA to CTA to CA(SA) pathway
                             </h2>
                         </div>
-                        <div className="space-y-4 text-muted-foreground leading-relaxed">
-                            <p>
-                                The PGDA sits at the beginning of the formal CA(SA) qualifying sequence. Completing the diploma year and passing your university assessments makes you eligible to write the SAICA Initial Test of Competence (ITC). The ITC is the first SAICA board exam, and it tests your ability to apply all four PGDA subjects together in integrated case scenarios.
-                            </p>
-                            <p>
-                                After passing the ITC, candidates complete a SAICA-accredited training contract. The Training Outside Public Practice (TOPP) route and the Training Inside Public Practice (TIPP) route are the two main options. The training period is typically three years and involves working in an environment that develops practical competence across the CA(SA) competency framework.
-                            </p>
-                            <p>
-                                The final step is the Assessment of Professional Competence (APC), a comprehensive case-study exam that tests professional judgement, ethics, and integrated application at the level expected of a newly qualified CA(SA). Passing the APC is the last academic requirement before SAICA grants the designation.
-                            </p>
-                            <p>
-                                For more detail on the ITC itself and what preparation looks like at that stage, the{" "}
-                                <Link href="/cta-tutor" className="text-accent hover:underline">
-                                    CTA tutor page
-                                </Link>{" "}
-                                covers board-exam preparation, integration technique, and the specific subjects the ITC has tested in recent sittings.
-                            </p>
+                        <p className="text-muted-foreground leading-relaxed mb-6">
+                            The PGDA sits at the beginning of the formal CA(SA) qualifying sequence. Completing the diploma year and passing your university assessments makes you eligible for the first SAICA board exam, and each stage from there builds on the last.
+                        </p>
+                        <div className="grid md:grid-cols-3 gap-4 mb-6">
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    1. ITC
+                                </h3>
+                                <ul className="space-y-2">
+                                    {[
+                                        "The SAICA Initial Test of Competence, the first board exam",
+                                        "Tests all four PGDA subjects together in integrated case scenarios",
+                                    ].map((topic) => (
+                                        <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    2. Training Contract
+                                </h3>
+                                <ul className="space-y-2">
+                                    {[
+                                        "SAICA-accredited, typically three years",
+                                        "Training Outside Public Practice (TOPP) or Training Inside Public Practice (TIPP)",
+                                        "Develops practical competence across the CA(SA) competency framework",
+                                    ].map((topic) => (
+                                        <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    3. APC
+                                </h3>
+                                <ul className="space-y-2">
+                                    {[
+                                        "The Assessment of Professional Competence, a comprehensive case-study exam",
+                                        "Tests professional judgement, ethics, and integrated application",
+                                        "The last academic requirement before SAICA grants the CA(SA) designation",
+                                    ].map((topic) => (
+                                        <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
+                        <p className="text-muted-foreground leading-relaxed">
+                            For more detail on the ITC itself and what preparation looks like at that stage, the{" "}
+                            <Link href="/cta-tutor" className="text-accent hover:underline">
+                                CTA tutor page
+                            </Link>{" "}
+                            covers board-exam preparation, integration technique, and the specific subjects the ITC has tested in recent sittings.
+                        </p>
                     </div>
 
                     {/* Section 4: How it works (shared, compact) */}
@@ -208,14 +296,9 @@ export default function PgdaTutorPage() {
                                 Why ACCE
                             </h2>
                         </div>
-                        <div className="space-y-4 text-muted-foreground leading-relaxed mb-6">
-                            <p>
-                                I am Priyanka, a CA(SA) qualified through SAICA, and I understand the PGDA year from the inside. I know what it feels like to juggle four subjects at honours level, to navigate the UNISA self-study format without constant access to a lecturer, and to realise mid-year that a gap in one subject is costing marks across everything else.
-                            </p>
-                            <p>
-                                The students I work with consistently say the sessions gave them a clearer structure for the year, not just answers to specific questions. Understanding the PGDA as a qualification, knowing how the four subjects connect, and building study habits that carry through to the ITC are what matter at this level. That is what I focus on.
-                            </p>
-                        </div>
+                        <p className="text-muted-foreground leading-relaxed mb-6">
+                            I am Priyanka, a CA(SA) qualified through SAICA, and I understand the PGDA year from the inside: juggling four subjects at honours level, navigating the UNISA self-study format without constant access to a lecturer, and realising mid-year that a gap in one subject is costing marks across everything else. The students I work with consistently say the sessions gave them a clearer structure for the year, not just answers to specific questions: understanding the PGDA as a qualification, knowing how the four subjects connect, and building study habits that carry through to the ITC.
+                        </p>
                         <div className="grid md:grid-cols-2 gap-4">
                             <div className="bg-card rounded-xl border border-border p-6">
                                 <p className="text-muted-foreground text-sm leading-relaxed mb-3">
@@ -242,17 +325,23 @@ export default function PgdaTutorPage() {
                         </div>
                         <div className="space-y-4">
                             {FAQ_ITEMS.map((item, index) => (
-                                <div
+                                <details
                                     key={index}
-                                    className="bg-card rounded-xl border border-border p-6"
+                                    className="group bg-card rounded-xl border border-border"
                                 >
-                                    <h3 className="font-display text-base font-semibold text-foreground mb-2">
-                                        {item.question}
-                                    </h3>
-                                    <p className="text-muted-foreground text-sm leading-relaxed">
+                                    <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                                        <h3 className="font-display text-base font-semibold text-foreground">
+                                            {item.question}
+                                        </h3>
+                                        <ChevronDown
+                                            className="w-5 h-5 text-accent flex-shrink-0 transition-transform duration-200 group-open:rotate-180"
+                                            aria-hidden="true"
+                                        />
+                                    </summary>
+                                    <p className="text-muted-foreground text-sm leading-relaxed px-6 pb-6">
                                         {item.answer}
                                     </p>
-                                </div>
+                                </details>
                             ))}
                         </div>
                     </div>

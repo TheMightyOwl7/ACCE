@@ -7,7 +7,7 @@ import SubjectGuides from "@/components/SubjectGuides";
 import SessionFormats from "@/components/SessionFormats";
 import ConversionCtas from "@/components/ConversionCtas";
 import { getGuidesForSubject } from "@/config/guides";
-import { BookOpen, Users, Award, HelpCircle, TrendingUp } from "lucide-react";
+import { BookOpen, Users, Award, HelpCircle, TrendingUp, Check, ChevronDown } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Accounting Tutor for CA(SA), PGDA & CTA | ACCE Tutors",
@@ -119,16 +119,66 @@ export default function AccountingTutorPage() {
                                 What we cover: financial accounting, consolidations and IFRS
                             </h2>
                         </div>
-                        <div className="space-y-4 text-muted-foreground leading-relaxed">
-                            <p>
-                                At undergraduate level, accounting tutoring covers the foundations that everything else rests on: the conceptual framework, financial statement preparation, inventory (IAS 2), property plant and equipment (IAS 16), provisions (IAS 37), and the introduction to consolidated financial statements. Getting these right early prevents the compounding misunderstandings that slow students down at PGDA level.
-                            </p>
-                            <p>
-                                At PGDA and CTA level, the most technically demanding area is group statements and consolidations. This is where most students drop marks. Consolidations require you to apply IFRS 3 Business Combinations, account for goodwill and impairment (IAS 36), handle the non-controlling interest, eliminate intragroup transactions, and manage step acquisitions and partial disposals. Getting fluent at consolidations takes structured repetition with exam-style scenarios, not just reading the standard.
-                            </p>
-                            <p>
-                                The IFRS standards I cover in depth include IFRS 15 (revenue recognition, the five-step model, contract modifications, variable consideration), IFRS 16 (lessee accounting, right-of-use assets, lease liability unwinding), IAS 12 (deferred tax, a consistent mark-loss area), and IFRS 9 (financial instruments classification and measurement). These are the standards the SAICA ITC returns to repeatedly, and the ones where technical accuracy under time pressure matters most.
-                            </p>
+                        <p className="text-muted-foreground leading-relaxed mb-6">
+                            Sessions cover the full financial accounting curriculum, from first-year foundations to the multi-standard scenarios the SAICA ITC examines. These are the topics students book most often.
+                        </p>
+                        <div className="grid md:grid-cols-3 gap-4">
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    Undergraduate Foundations
+                                </h3>
+                                <ul className="space-y-2">
+                                    {[
+                                        "Conceptual framework and financial statement preparation",
+                                        "Inventory (IAS 2) and property plant and equipment (IAS 16)",
+                                        "Provisions (IAS 37)",
+                                        "Partnership and company accounts",
+                                        "Introduction to consolidated financial statements",
+                                    ].map((topic) => (
+                                        <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    Group Statements &amp; Consolidations
+                                </h3>
+                                <ul className="space-y-2">
+                                    {[
+                                        "IFRS 3 Business Combinations",
+                                        "Goodwill and impairment (IAS 36)",
+                                        "Non-controlling interest",
+                                        "Intragroup eliminations",
+                                        "Step acquisitions and partial disposals",
+                                    ].map((topic) => (
+                                        <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    IFRS Standards in Depth
+                                </h3>
+                                <ul className="space-y-2">
+                                    {[
+                                        "IFRS 15 revenue: five-step model, variable consideration, contract modifications",
+                                        "IFRS 16 leases: right-of-use assets, lease liability unwinding",
+                                        "IAS 12 deferred tax",
+                                        "IFRS 9 financial instruments",
+                                    ].map((topic) => (
+                                        <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -166,9 +216,6 @@ export default function AccountingTutorPage() {
                                 </p>
                             </div>
                         </div>
-                        <p className="text-muted-foreground leading-relaxed">
-                            Whether you are an undergraduate student building foundations, a PGDA student navigating IFRS depth, or a CTA-level student preparing for the ITC board exam, the sessions adapt to where you are and where you need to be.
-                        </p>
                     </div>
 
                     {/* Section 3: How sessions work (shared, compact) */}
@@ -182,17 +229,9 @@ export default function AccountingTutorPage() {
                                 Why ACCE: CA(SA) tutors, accounting experience, results
                             </h2>
                         </div>
-                        <div className="space-y-4 text-muted-foreground leading-relaxed mb-6">
-                            <p>
-                                I am Priyanka, a CA(SA) who came up through the same SAICA pathway my students are on now. I have worked through the same financial accounting curriculum, sat the ITC, and navigated the same IFRS standards you are facing. That background matters because I can tell you not just what the standard says, but where students consistently misapply it and what a good exam answer looks like versus a technically correct but poorly structured one.
-                            </p>
-                            <p>
-                                Accounting tutoring works best when the tutor has been through the assessments they are preparing you for. The ITC Paper 1 has a specific structure and mark allocation logic. Knowing that structure shapes how I help students approach consolidation questions, revenue recognition scenarios, and deferred tax computations differently from how a textbook chapter presents them.
-                            </p>
-                            <p>
-                                The students I work with consistently report that the sessions helped them understand the sequence within a question, not just the technical content. Understanding which standard to apply, in what order, and how to structure the journal or disclosure note is what the ITC is actually testing at accounting subject level.
-                            </p>
-                        </div>
+                        <p className="text-muted-foreground leading-relaxed mb-6">
+                            I am Priyanka, a CA(SA) who came up through the same SAICA pathway you are on: the same financial accounting curriculum, the same IFRS standards, and the ITC itself. That means I can show you not just what a standard says, but where students consistently misapply it and how the ITC Paper 1 allocates marks. Sessions focus on the sequence within a question, which standard applies, in what order, and how to structure the journal or disclosure note, because that is what the ITC is actually testing.
+                        </p>
                         <div className="grid md:grid-cols-2 gap-4">
                             <div className="bg-card rounded-xl border border-border p-6">
                                 <p className="text-muted-foreground text-sm leading-relaxed mb-3">
@@ -259,17 +298,23 @@ export default function AccountingTutorPage() {
                         </div>
                         <div className="space-y-4">
                             {FAQ_ITEMS.map((item, index) => (
-                                <div
+                                <details
                                     key={index}
-                                    className="bg-card rounded-xl border border-border p-6"
+                                    className="group bg-card rounded-xl border border-border"
                                 >
-                                    <h3 className="font-display text-base font-semibold text-foreground mb-2">
-                                        {item.question}
-                                    </h3>
-                                    <p className="text-muted-foreground text-sm leading-relaxed">
+                                    <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                                        <h3 className="font-display text-base font-semibold text-foreground">
+                                            {item.question}
+                                        </h3>
+                                        <ChevronDown
+                                            className="w-5 h-5 text-accent flex-shrink-0 transition-transform duration-200 group-open:rotate-180"
+                                            aria-hidden="true"
+                                        />
+                                    </summary>
+                                    <p className="text-muted-foreground text-sm leading-relaxed px-6 pb-6">
                                         {item.answer}
                                     </p>
-                                </div>
+                                </details>
                             ))}
                         </div>
                     </div>

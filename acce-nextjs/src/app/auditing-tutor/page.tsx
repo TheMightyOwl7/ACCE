@@ -7,7 +7,7 @@ import SubjectGuides from "@/components/SubjectGuides";
 import SessionFormats from "@/components/SessionFormats";
 import ConversionCtas from "@/components/ConversionCtas";
 import { getGuidesForSubject } from "@/config/guides";
-import { BookOpen, Users, Award, HelpCircle, TrendingUp } from "lucide-react";
+import { BookOpen, Users, Award, HelpCircle, TrendingUp, Check, ChevronDown } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Auditing Tutor for CA(SA) Students | ACCE Tutors",
@@ -123,22 +123,65 @@ export default function AuditingTutorPage() {
                                 What we cover: ISAs, the audit process, assertions and reporting
                             </h2>
                         </div>
-                        <div className="space-y-4 text-muted-foreground leading-relaxed">
-                            <p>
-                                The International Standards on Auditing form the technical foundation of the subject. ISA 200 establishes the overall objective of the auditor: to obtain reasonable assurance that the financial statements as a whole are free from material misstatement, whether due to error or fraud, and to issue a report communicating the opinion. Reasonable assurance is high but not absolute, which means the auditor does not guarantee that the statements are correct, but does provide meaningful assurance. That nuance is tested directly in both the ITC and the APC.
-                            </p>
-                            <p>
-                                The audit process moves through distinct phases. The engagement begins with client acceptance and continuance, where the auditor assesses whether to accept or continue an engagement, considers independence threats under the SAICA and IRBA Code of Professional Conduct, and agrees the terms of engagement under ISA 210. Planning under ISA 300 follows: the auditor sets overall materiality and performance materiality under ISA 320, develops an understanding of the entity and its environment under ISA 315, and identifies the risks of material misstatement at both the financial statement level and the assertion level. ISA 240 governs the auditor's responsibilities relating to fraud: the auditor must maintain professional scepticism, presume that revenue recognition is a fraud risk, and respond to identified risks with procedures specifically designed to address them.
-                            </p>
-                            <p>
-                                Internal controls are assessed under ISA 315 and ISA 330. Where controls are well-designed and implemented, the auditor may choose to test those controls to reduce detection risk and rely on them for substantive purposes. Where controls are absent or weak, the auditor responds with a wholly substantive approach. ISA 330 requires the auditor's planned responses to be directly linked to the assessed risks and the affected assertions. Audit evidence, governed by ISA 500, must be both sufficient (the quantity) and appropriate (the quality: relevance and reliability). The nature, timing and extent of procedures determines whether evidence is adequate. Audit sampling under ISA 530 allows the auditor to draw conclusions about a population from a sample, applying statistical or non-statistical methods depending on the risk level and the size of the population.
-                            </p>
-                            <p>
-                                The audit concludes with the completion and reporting phase. The auditor performs procedures for subsequent events under ISA 560, evaluates whether the going concern basis is appropriate under ISA 570, and obtains written representations under ISA 580 as one form of evidence (though not as a substitute for other procedures). The audit report under ISA 700 communicates the opinion. Where the auditor cannot obtain sufficient appropriate evidence or concludes that the financial statements are materially misstated, ISA 705 requires a modified opinion: a qualified opinion where the matter is material but not pervasive, an adverse opinion where the misstatement is pervasive, or a disclaimer of opinion where the scope limitation is so severe that the auditor cannot form a view at all. Key audit matters, communicated under ISA 701 for listed entities, describe the most significant judgements in the audit.
-                            </p>
-                            <p>
-                                Ethics and independence run through the entire engagement. The SAICA and IRBA Code of Professional Conduct adopts the IESBA Code and layers additional South African requirements from IRBA. The Code identifies five fundamental principles (integrity, objectivity, professional competence and due care, confidentiality, and professional behaviour) and requires auditors to identify threats to those principles, evaluate their significance, and apply safeguards to eliminate or reduce threats to an acceptable level. King IV on corporate governance addresses auditor oversight at the entity level: the audit committee monitors the external auditor's independence, approves permitted non-audit services, and assesses audit quality.
-                            </p>
+                        <p className="text-muted-foreground leading-relaxed mb-6">
+                            Sessions cover the full auditing curriculum, anchored in ISA 200&apos;s objective: obtaining reasonable assurance (high but not absolute) that the financial statements are free from material misstatement, whether due to error or fraud. From that foundation we work through the ISAs and the ethics framework the ITC and APC examine most. These are the areas students book most often.
+                        </p>
+                        <div className="grid md:grid-cols-3 gap-4">
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    Audit Process &amp; Planning
+                                </h3>
+                                <ul className="space-y-2">
+                                    {[
+                                        "Client acceptance, continuance and terms of engagement (ISA 210)",
+                                        "Planning, materiality and performance materiality (ISA 300, ISA 320)",
+                                        "Understanding the entity, risk identification and the audit risk model (ISA 315)",
+                                        "Fraud responsibilities, professional scepticism and the revenue recognition fraud presumption (ISA 240)",
+                                    ].map((topic) => (
+                                        <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    Controls, Evidence &amp; Assertions
+                                </h3>
+                                <ul className="space-y-2">
+                                    {[
+                                        "Internal controls and responses to assessed risks: controls testing vs a substantive approach (ISA 315, ISA 330)",
+                                        "Linking procedures to the assertions",
+                                        "Sufficient appropriate audit evidence: nature, timing and extent (ISA 500)",
+                                        "Audit sampling, statistical and non-statistical (ISA 530)",
+                                    ].map((topic) => (
+                                        <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="bg-card rounded-xl border border-border p-6">
+                                <h3 className="font-display text-base font-semibold text-foreground mb-3">
+                                    Reporting, Ethics &amp; Governance
+                                </h3>
+                                <ul className="space-y-2">
+                                    {[
+                                        "Subsequent events, going concern and written representations (ISA 560, ISA 570, ISA 580)",
+                                        "Audit opinions: unmodified, qualified, adverse and disclaimer (ISA 700, ISA 705)",
+                                        "Key audit matters for listed entities (ISA 701)",
+                                        "SAICA/IRBA Code (adopting the IESBA Code): five fundamental principles, threats and safeguards",
+                                        "King IV, the audit committee and non-audit services",
+                                    ].map((topic) => (
+                                        <li key={topic} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -176,9 +219,6 @@ export default function AuditingTutorPage() {
                                 </p>
                             </div>
                         </div>
-                        <p className="text-muted-foreground leading-relaxed">
-                            Whether you are building audit foundations at undergraduate level, consolidating the full auditing syllabus during your PGDA year, or preparing for the ITC and APC, sessions are matched to your level and your exam target.
-                        </p>
                     </div>
 
                     {/* Section 3: How sessions work (shared, compact) */}
@@ -192,17 +232,9 @@ export default function AuditingTutorPage() {
                                 Why ACCE: the CA(SA) pathway, ISAs from first principles, real exam results
                             </h2>
                         </div>
-                        <div className="space-y-4 text-muted-foreground leading-relaxed mb-6">
-                            <p>
-                                I am Priyanka, a CA(SA) qualified through SAICA. I sat the ITC (where Auditing is one of the four papers) and the APC (where auditing and governance considerations thread through the integrated case study). That experience shapes how I tutor: I can tell you not just what ISA 315 says about risk identification, but what the ITC examiner expects in a risk assessment answer and what separates a response that picks up 80% of the available marks from one that picks up 40%.
-                            </p>
-                            <p>
-                                One thing I consistently see is students treating auditing as a memorisation subject: learn the ISAs, recall definitions in the exam. That approach gets you a pass at undergraduate level but breaks down in the ITC and APC, where questions are scenario-driven. A well-designed ISA 315 question will describe a client with a newly implemented ERP system, a revenue recognition policy change, and a shortage of qualified accounting staff, and ask you to identify the risks of material misstatement and explain how you would respond under ISA 330. You cannot memorise your way to full marks on that question. You need to understand the audit risk model deeply enough to apply it to a scenario you have not seen before.
-                            </p>
-                            <p>
-                                For APC candidates, the auditing dimension is often the part of the integrated case they feel least prepared for, because the APC does not ask you to list procedures. It asks you to identify governance risks, evaluate internal control environments, consider going concern indicators, or assess whether the auditor's independence is threatened by a specific proposed arrangement, and to do all of that as a professional adviser, not as a technician recalling standards. I prepare APC candidates explicitly for that applied register.
-                            </p>
-                        </div>
+                        <p className="text-muted-foreground leading-relaxed mb-6">
+                            I am Priyanka, a CA(SA) qualified through SAICA. I sat the ITC, where Auditing is one of the four papers, and the APC, where auditing and governance thread through the integrated case study. Auditing is not a memorisation subject: ITC questions are scenario-driven, asking you to apply ISA 315 and the audit risk model to a client you have never seen, while the APC asks for governance and independence advice in a professional advisory register. Sessions build that applied understanding, including what the examiner expects from a risk assessment answer and where the marks actually sit.
+                        </p>
                         <div className="grid md:grid-cols-2 gap-4">
                             <div className="bg-card rounded-xl border border-border p-6">
                                 <p className="text-muted-foreground text-sm leading-relaxed mb-3">
@@ -266,17 +298,23 @@ export default function AuditingTutorPage() {
                         </div>
                         <div className="space-y-4">
                             {FAQ_ITEMS.map((item, index) => (
-                                <div
+                                <details
                                     key={index}
-                                    className="bg-card rounded-xl border border-border p-6"
+                                    className="group bg-card rounded-xl border border-border"
                                 >
-                                    <h3 className="font-display text-base font-semibold text-foreground mb-2">
-                                        {item.question}
-                                    </h3>
-                                    <p className="text-muted-foreground text-sm leading-relaxed">
+                                    <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                                        <h3 className="font-display text-base font-semibold text-foreground">
+                                            {item.question}
+                                        </h3>
+                                        <ChevronDown
+                                            className="w-5 h-5 text-accent flex-shrink-0 transition-transform duration-200 group-open:rotate-180"
+                                            aria-hidden="true"
+                                        />
+                                    </summary>
+                                    <p className="text-muted-foreground text-sm leading-relaxed px-6 pb-6">
                                         {item.answer}
                                     </p>
-                                </div>
+                                </details>
                             ))}
                         </div>
                     </div>
